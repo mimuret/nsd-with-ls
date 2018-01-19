@@ -1,13 +1,14 @@
-/* A Bison parser, made by GNU Bison 3.0.4.  */
+/* A Bison parser, made by GNU Bison 2.3.  */
 
-/* Bison interface for Yacc-like parsers in C
+/* Skeleton interface for Bison's Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015 Free Software Foundation, Inc.
+   Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006
+   Free Software Foundation, Inc.
 
-   This program is free software: you can redistribute it and/or modify
+   This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 3 of the License, or
-   (at your option) any later version.
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -15,7 +16,9 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -30,110 +33,102 @@
    This special exception was added by the Free Software Foundation in
    version 2.2 of Bison.  */
 
-#ifndef YY_YY_ZPARSER_H_INCLUDED
-# define YY_YY_ZPARSER_H_INCLUDED
-/* Debug traces.  */
-#ifndef YYDEBUG
-# define YYDEBUG 0
-#endif
-#if YYDEBUG
-extern int yydebug;
-#endif
-
-/* Token type.  */
+/* Tokens.  */
 #ifndef YYTOKENTYPE
 # define YYTOKENTYPE
-  enum yytokentype
-  {
-    T_A = 258,
-    T_NS = 259,
-    T_MX = 260,
-    T_TXT = 261,
-    T_CNAME = 262,
-    T_AAAA = 263,
-    T_PTR = 264,
-    T_NXT = 265,
-    T_KEY = 266,
-    T_SOA = 267,
-    T_SIG = 268,
-    T_SRV = 269,
-    T_CERT = 270,
-    T_LOC = 271,
-    T_MD = 272,
-    T_MF = 273,
-    T_MB = 274,
-    T_MG = 275,
-    T_MR = 276,
-    T_NULL = 277,
-    T_WKS = 278,
-    T_HINFO = 279,
-    T_MINFO = 280,
-    T_RP = 281,
-    T_AFSDB = 282,
-    T_X25 = 283,
-    T_ISDN = 284,
-    T_RT = 285,
-    T_NSAP = 286,
-    T_NSAP_PTR = 287,
-    T_PX = 288,
-    T_GPOS = 289,
-    T_EID = 290,
-    T_NIMLOC = 291,
-    T_ATMA = 292,
-    T_NAPTR = 293,
-    T_KX = 294,
-    T_A6 = 295,
-    T_DNAME = 296,
-    T_SINK = 297,
-    T_OPT = 298,
-    T_APL = 299,
-    T_UINFO = 300,
-    T_UID = 301,
-    T_GID = 302,
-    T_UNSPEC = 303,
-    T_TKEY = 304,
-    T_TSIG = 305,
-    T_IXFR = 306,
-    T_AXFR = 307,
-    T_MAILB = 308,
-    T_MAILA = 309,
-    T_DS = 310,
-    T_DLV = 311,
-    T_SSHFP = 312,
-    T_RRSIG = 313,
-    T_NSEC = 314,
-    T_DNSKEY = 315,
-    T_SPF = 316,
-    T_NSEC3 = 317,
-    T_IPSECKEY = 318,
-    T_DHCID = 319,
-    T_NSEC3PARAM = 320,
-    T_TLSA = 321,
-    T_URI = 322,
-    T_NID = 323,
-    T_L32 = 324,
-    T_L64 = 325,
-    T_LP = 326,
-    T_EUI48 = 327,
-    T_EUI64 = 328,
-    T_CAA = 329,
-    T_CDS = 330,
-    T_CDNSKEY = 331,
-    T_OPENPGPKEY = 332,
-    T_CSYNC = 333,
-    T_AVC = 334,
-    DOLLAR_TTL = 335,
-    DOLLAR_ORIGIN = 336,
-    NL = 337,
-    SP = 338,
-    STR = 339,
-    PREV = 340,
-    BITLAB = 341,
-    T_TTL = 342,
-    T_RRCLASS = 343,
-    URR = 344,
-    T_UTYPE = 345
-  };
+   /* Put the tokens into the symbol table, so that GDB and other debuggers
+      know about them.  */
+   enum yytokentype {
+     T_A = 258,
+     T_NS = 259,
+     T_MX = 260,
+     T_TXT = 261,
+     T_CNAME = 262,
+     T_AAAA = 263,
+     T_PTR = 264,
+     T_NXT = 265,
+     T_KEY = 266,
+     T_SOA = 267,
+     T_SIG = 268,
+     T_SRV = 269,
+     T_CERT = 270,
+     T_LOC = 271,
+     T_MD = 272,
+     T_MF = 273,
+     T_MB = 274,
+     T_MG = 275,
+     T_MR = 276,
+     T_NULL = 277,
+     T_WKS = 278,
+     T_HINFO = 279,
+     T_MINFO = 280,
+     T_RP = 281,
+     T_AFSDB = 282,
+     T_X25 = 283,
+     T_ISDN = 284,
+     T_RT = 285,
+     T_NSAP = 286,
+     T_NSAP_PTR = 287,
+     T_PX = 288,
+     T_GPOS = 289,
+     T_EID = 290,
+     T_NIMLOC = 291,
+     T_ATMA = 292,
+     T_NAPTR = 293,
+     T_KX = 294,
+     T_A6 = 295,
+     T_DNAME = 296,
+     T_SINK = 297,
+     T_OPT = 298,
+     T_APL = 299,
+     T_UINFO = 300,
+     T_UID = 301,
+     T_GID = 302,
+     T_UNSPEC = 303,
+     T_TKEY = 304,
+     T_TSIG = 305,
+     T_IXFR = 306,
+     T_AXFR = 307,
+     T_MAILB = 308,
+     T_MAILA = 309,
+     T_DS = 310,
+     T_DLV = 311,
+     T_SSHFP = 312,
+     T_RRSIG = 313,
+     T_NSEC = 314,
+     T_DNSKEY = 315,
+     T_SPF = 316,
+     T_NSEC3 = 317,
+     T_IPSECKEY = 318,
+     T_DHCID = 319,
+     T_NSEC3PARAM = 320,
+     T_TLSA = 321,
+     T_URI = 322,
+     T_NID = 323,
+     T_L32 = 324,
+     T_L64 = 325,
+     T_LP = 326,
+     T_EUI48 = 327,
+     T_EUI64 = 328,
+     T_CAA = 329,
+     T_CDS = 330,
+     T_CDNSKEY = 331,
+     T_OPENPGPKEY = 332,
+     T_CSYNC = 333,
+     T_AVC = 334,
+     T_LB = 335,
+     DOLLAR_TTL = 336,
+     DOLLAR_ORIGIN = 337,
+     NL = 338,
+     SP = 339,
+     STR = 340,
+     PREV = 341,
+     BITLAB = 342,
+     T_TTL = 343,
+     T_RRCLASS = 344,
+     URR = 345,
+     T_UTYPE = 346
+   };
 #endif
 /* Tokens.  */
 #define T_A 258
@@ -213,25 +208,26 @@ extern int yydebug;
 #define T_OPENPGPKEY 332
 #define T_CSYNC 333
 #define T_AVC 334
-#define DOLLAR_TTL 335
-#define DOLLAR_ORIGIN 336
-#define NL 337
-#define SP 338
-#define STR 339
-#define PREV 340
-#define BITLAB 341
-#define T_TTL 342
-#define T_RRCLASS 343
-#define URR 344
-#define T_UTYPE 345
+#define T_LB 335
+#define DOLLAR_TTL 336
+#define DOLLAR_ORIGIN 337
+#define NL 338
+#define SP 339
+#define STR 340
+#define PREV 341
+#define BITLAB 342
+#define T_TTL 343
+#define T_RRCLASS 344
+#define URR 345
+#define T_UTYPE 346
 
-/* Value type.  */
+
+
+
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-
-union YYSTYPE
+typedef union YYSTYPE
+#line 50 "./zparser.y"
 {
-#line 50 "zparser.y" /* yacc.c:1909  */
-
 	domain_type	 *domain;
 	const dname_type *dname;
 	struct lex_data	  data;
@@ -239,18 +235,14 @@ union YYSTYPE
 	uint16_t	  klass;
 	uint16_t	  type;
 	uint16_t	 *unknown;
-
-#line 244 "zparser.h" /* yacc.c:1909  */
-};
-
-typedef union YYSTYPE YYSTYPE;
-# define YYSTYPE_IS_TRIVIAL 1
+}
+/* Line 1529 of yacc.c.  */
+#line 241 "zparser.h"
+	YYSTYPE;
+# define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
+# define YYSTYPE_IS_TRIVIAL 1
 #endif
-
 
 extern YYSTYPE yylval;
 
-int yyparse (void);
-
-#endif /* !YY_YY_ZPARSER_H_INCLUDED  */

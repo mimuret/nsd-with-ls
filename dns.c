@@ -743,12 +743,18 @@ static rrtype_descriptor_type rrtype_descriptors[(RRTYPE_DESCRIPTORS_LENGTH+1)] 
 	{ TYPE_AVC, "AVC", T_AVC, 1, 1,
 	  { RDATA_WF_TEXTS },
 	  { RDATA_ZF_TEXTS } },
+	/* */
+	{ TYPE_DOA, "DOA", T_UTYPE, 1, 1, { RDATA_WF_BINARY }, { RDATA_ZF_UNKNOWN } },
+	{ TYPE_LB, "LB", T_LB, 3, 3,
+		{ RDATA_WF_SHORT, RDATA_WF_TEXT, RDATA_WF_COMPRESSED_DNAME },
+		{ RDATA_ZF_SHORT, RDATA_WF_TEXT, RDATA_ZF_DNAME }},
 
 	/* 32768 - TA */
 	/* 32769 */
 	{ TYPE_DLV, "DLV", T_DLV, 4, 4,
 	  { RDATA_WF_SHORT, RDATA_WF_BYTE, RDATA_WF_BYTE, RDATA_WF_BINARY },
 	  { RDATA_ZF_SHORT, RDATA_ZF_ALGORITHM, RDATA_ZF_BYTE, RDATA_ZF_HEX } },
+
 };
 
 rrtype_descriptor_type *

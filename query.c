@@ -979,6 +979,8 @@ answer_domain(struct nsd* nsd, struct query *q, answer_type *answer,
 		answer_nodata(q, answer, original);
 		return;
 #endif
+	} else if (q->edns.lbsupport_ok && (q->qtype == TYPE_A || q->qtype == TYPE_AAAA) && (rrset = domain_find_rrset(domain, q->zone, TYPE_LB))) {
+		add_rrset(q, answer, ANSWER_SECTION, domain, rrset);
 	} else if ((rrset = domain_find_rrset(domain, q->zone, q->qtype))) {
 		add_rrset(q, answer, ANSWER_SECTION, domain, rrset);
 	} else if ((rrset = domain_find_rrset(domain, q->zone, TYPE_CNAME))) {

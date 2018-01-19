@@ -19,6 +19,7 @@ struct query;
 #define OPT_HDR 4U                      /* NSID opt header length */
 #define NSID_CODE       3               /* nsid option code */
 #define DNSSEC_OK_MASK  0x8000U         /* do bit mask */
+#define LS_OK_MASK  		0x4000U         /* ls bit mask */
 
 struct edns_data
 {
@@ -46,6 +47,7 @@ struct edns_record
 	size_t           maxlen;
 	size_t		 opt_reserved_space;
 	int              dnssec_ok;
+	int              lbsupport_ok;
 	int              nsid;
 };
 typedef struct edns_record edns_record_type;

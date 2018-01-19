@@ -1262,7 +1262,6 @@ parse_unknown_rdata(uint16_t type, uint16_t *wireformat)
 	}
 }
 
-
 /*
  * Compares two rdata arrays.
  *

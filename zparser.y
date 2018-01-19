@@ -68,7 +68,7 @@ nsec3_add_params(const char* hash_algo_str, const char* flag_str,
 %token <type> T_AXFR T_MAILB T_MAILA T_DS T_DLV T_SSHFP T_RRSIG T_NSEC T_DNSKEY
 %token <type> T_SPF T_NSEC3 T_IPSECKEY T_DHCID T_NSEC3PARAM T_TLSA T_URI
 %token <type> T_NID T_L32 T_L64 T_LP T_EUI48 T_EUI64 T_CAA T_CDS T_CDNSKEY
-%token <type> T_OPENPGPKEY T_CSYNC T_AVC
+%token <type> T_OPENPGPKEY T_CSYNC T_AVC T_LB
 
 /* other tokens */
 %token	       DOLLAR_TTL DOLLAR_ORIGIN NL SP
@@ -641,6 +641,8 @@ type_and_rdata:
     |	T_CSYNC sp rdata_unknown { $$ = $1; parse_unknown_rdata($1, $3); }
     |	T_URI sp rdata_uri
     |	T_URI sp rdata_unknown { $$ = $1; parse_unknown_rdata($1, $3); }
+    |	T_LB sp rdata_lb
+    |	T_LB sp rdata_unknown { $$ = $1; parse_unknown_rdata($1, $3); }
     |	T_UTYPE sp rdata_unknown { $$ = $1; parse_unknown_rdata($1, $3); }
     |	STR error NL
     {
@@ -1075,6 +1077,13 @@ rdata_csync:	STR sp STR nsec_seq
     }
     ;
 
+rdata_lb:	STR sp STR sp dname trail
+	{
+	    zadd_rdata_wireformat(zparser_conv_short(parser->region, $1.str)); /* # weight */
+	    zadd_rdata_wireformat(zparser_conv_text(parser->region, $3.str, $3.len)); /* geocode */
+	    zadd_rdata_domain($5);
+	}
+	;
 rdata_unknown:	URR sp STR sp str_sp_seq trail
     {
 	    /* $2 is the number of octets, currently ignored */
